@@ -1,0 +1,19 @@
+@import "fonts";
+@import "variables";
+@import "mixins";
+
+/*
+  Import vendor libraries
+*/
+@import "vendor/_normalize";
+
+/*
+  Import utils classes and base styles
+*/
+@import "utils";
+@import "base";
+
+@import "./blocks/button";
+@import "./blocks/header";
+@import "./blocks/dark-curtain";
+@import "./blocks/main-section";

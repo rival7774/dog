@@ -1,0 +1,67 @@
+.main-section {
+  min-height: 1000px;
+  padding: 20px;
+  background: url("../../img/dog-bg.jpg"), $brown;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  @media (max-width: 1780px) {
+    background-size: 1920px 1080px;
+  }
+
+  @media (max-width: $tablet) {
+    min-height: 843px;
+  }
+}
+
+.main-section__wrap-content {
+  color: $basic-white;
+  padding: 40px 86px 40px 40px;
+  border-radius: 12px 64px 12px 0px;
+  backdrop-filter: blur(10px);
+  max-width: 1134px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 36px;
+  row-gap: 59px;
+
+  @media (max-width: $tablet) {
+    padding: 20px;
+    row-gap: 40px;
+  }
+}
+
+.main-section__title {
+  font-weight: 500;
+  @include font(48px, 48);
+  @include line(53px, 43);
+  letter-spacing: -2px;
+
+  grid-column: 1/-1;
+
+  @include font-media(48px, 48);
+  @include line-media(53px, 43);
+}
+
+.main-section__text {
+  @include font(16px, 4);
+  @include line(19px, 5);
+
+  @include font-media(16px, 4);
+  @include line-media(19px, 5);
+
+  @media (max-width: $tablet) {
+    grid-column: 1/-1;
+
+    &:not(:first-of-type) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.dark-curtain {
+  @media (max-width: $media-menu) {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: $border-mid;
+
+    z-index: 900;
+  }
+}

@@ -1,0 +1,19 @@
+@mixin font($min, $maxMinusMin) {
+  font-size: calc(#{$min} + #{$maxMinusMin} * (100vw / 1920));
+}
+
+@mixin font-media($min, $maxMinusMin, $point: 767px) {
+  @media (max-width: $point) {
+    font-size: calc(#{$min} + (#{$maxMinusMin} + #{$maxMinusMin} * 0.7) * ((100vw - 375px) / 1920));
+  }
+}
+
+@mixin line($min, $maxMinusMin) {
+  line-height: calc(#{$min} + #{$maxMinusMin} * (100vw / 1920));
+}
+
+@mixin line-media($min, $maxMinusMin, $point: 767px) {
+  @media (max-width: $point) {
+    line-height: calc(#{$min} + (#{$maxMinusMin} + #{$maxMinusMin} * 0.7) * ((100vw - 375px) / 1920));
+  }
+}
