@@ -4,7 +4,13 @@
     width: 100vw;
     height: 100vh;
     background-color: $border-mid;
+    left: 100%;
+    transition: left $animation;
 
     z-index: 900;
+  }
+
+  .header--open-menu + & {
+    left: 0;
   }
 }

@@ -88,7 +88,7 @@
     bottom: -5px;
   }
 
-  .header__btn-menu--open & {
+  .header--open-menu > .header__btn-menu & {
     width: 0;
 
     &:after,
@@ -133,7 +133,7 @@
     overflow-y: auto;
   }
 
-  .header__btn-menu--open + & {
+  .header--open-menu > & {
     @media (max-width: $media-menu) {
       right: 50%;
       visibility: visible;
