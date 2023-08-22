@@ -1,31 +1,37 @@
-.mySelect {
+.my-select {
   position: relative;
   z-index: 1;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
-.mySelect__input {
+.my-select__input {
 
 }
 
-.mySelect__wrap-option {
-  position: absolute;
-  bottom: 0;
+.my-select__wrap-option {
+  position: relative;
+  top: 0;
   left: 0;
 
-  height: 0;
+  max-height: 0;
   width: 100%;
   z-index: 1;
 
   overflow: hidden;
-  transition: $animation;
+  transition: top $animation, max-height $animation;
 
-  .mySelect--open & {
+  background-color: #9a500f;
+
+  .my-select--open & {
     top: 100%;
-    height: auto;
+    overflow-y: auto;
+    max-height: 200px;
+    transition: top $animation, max-height $animation;
   }
 }
 
-.mySelect__option {
+.my-select__option {
 
 }
 

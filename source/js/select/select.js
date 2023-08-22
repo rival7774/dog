@@ -1,4 +1,4 @@
-const options = ['мама', 'папа', 'сестра', 'жена'];
+const options = ['мама', 'папа', 'сестра', 'жена', 'osuefosifjm', 'sedgsjirhgiuagh airghj oiajrg ajoi gja', 'shsfasf', 'hddjsdgs', 'gdhsg', 'asdasgaf', 'asdadas', 'asdasd',];
 
 class Select {
   constructor(selector, options, nameIdSelect) {
@@ -31,7 +31,7 @@ class Select {
 
   createWrapOptions() {
     const ul = document.createElement('ul');
-    ul.classList.add('mySelect__wrap-option');
+    ul.classList.add('my-select__wrap-option');
     return ul;
   }
 
@@ -42,7 +42,7 @@ class Select {
       li.dataset.id = id;
       li.textContent = str;
       li.setAttribute('tabindex', '0');
-      li.classList.add('mySelect__option');
+      li.classList.add('my-select__option');
       return li;
     });
   }
@@ -52,13 +52,13 @@ class Select {
     p.dataset.name = nameId;
     p.id = nameId;
     p.setAttribute('tabindex', '0');
-    p.classList.add('mySelect__input');
+    p.classList.add('my-select__input');
     return p;
   }
 
   createMySelect() {
     const div = document.createElement('div');
-    div.classList.add('mySelect');
+    div.classList.add('my-select');
     return div;
   }
 }
