@@ -1,6 +1,4 @@
 .my-select {
-  position: relative;
-  z-index: 1;
   margin-top: 100px;
   margin-bottom: 100px;
 }
@@ -16,18 +14,16 @@
 
   max-height: 0;
   width: 100%;
-  z-index: 1;
 
   overflow: hidden;
-  transition: top $animation, max-height $animation;
+  transition: $animation;
 
   background-color: #9a500f;
 
   .my-select--open & {
-    top: 100%;
     overflow-y: auto;
     max-height: 200px;
-    transition: top $animation, max-height $animation;
+    transition: $animation;
   }
 }
 
