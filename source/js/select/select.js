@@ -1,48 +1,50 @@
 const options = ['мама', 'папа', 'сестра', 'жена', 'osuefosifjm', 'sedgsjirhgiuagh airghj oiajrg ajoi gja', 'shsfasf', 'hddjsdgs', 'gdhsg', 'asdasgaf', 'asdadas', 'asdasd',];
 
 class Select {
-  constructor(selector, options, nameIdSelect) {
-    this.onClickInput = this.onClickInput.bind(this);
+  constructor(selector, selectorSelect) {
+    this.onClickWrapInput = this.onClickWrapInput.bind(this);
     this.onKeyMySelect = this.onKeyMySelect.bind(this);
     this.onFocusoutMySelect = this.onFocusoutMySelect.bind(this);
     this.onMousemoveWrapOption = this.onMousemoveWrapOption.bind(this);
     this.onKeyWrapOption = this.onKeyWrapOption.bind(this);
     this.onClickWrapOption = this.onClickWrapOption.bind(this);
-    this.close = this.close.bind(this);
-    this.open = this.open.bind(this);
-    this.startFocusOption = this.startFocusOption.bind(this);
-    this.checkedOptionByValue = this.checkedOptionByValue.bind(this);
-    this.checkedOptionById = this.checkedOptionById.bind(this);
-
-    this.elem = document.querySelector(selector);
-    this.select = document.querySelector(selector);
 
     this.classHidden = 'hidden';
+    this.classVisuallyHidden = 'visually-hidden';
     this.classOpen = 'my-select__wrap-option--open';
-    this.timeAnimation = 500;
-    this.textDefault = 'Выберете пункт';
+    this.classOpenArrow = 'my-select__arrow--open';
     this.dedicatedOption = 0;
+    this.selectOpen = false;
 
-    this.options = this.createOptions(options);
+    this.elem = document.querySelector(selector);
+    this.select = this.elem.querySelector(selectorSelect);
 
-    this.input = this.createInput(nameIdSelect);
-    this.setValueInput(this.textDefault);
-    this.input.addEventListener('click', this.onClickInput);
+    this.select.tabIndex = '-1';
+    this.select.classList.add(this.classVisuallyHidden);
 
+    this.options = this.createOptions([...this.select.children]);
+    this.input = this.createInput(this.select.name);
+    this.arrow = this.createArrow();
+    this.wrapInput = this.createWrapInput();
     this.wrapOptions = this.createWrapOptions();
-    this.wrapOptions.append(...this.options);
-
     this.mySelect = this.createMySelect();
-    this.mySelect.append(this.input, this.wrapOptions);
+
+    this.wrapInput.addEventListener('click', this.onClickWrapInput);
+
+    this.wrapOptions.append(...this.options);
+    this.wrapInput.append(this.input, this.arrow);
+
+    this.mySelect.append(this.wrapInput, this.wrapOptions);
     this.mySelect.addEventListener('keydown', this.onKeyMySelect);
     this.mySelect.addEventListener('blur', this.onFocusoutMySelect, true);
 
     this.elem.append(this.mySelect);
+    this.checkedOptionById(this.select.selectedIndex);
   }
 
   checkedOptionByValue(value) {
-    const filterOptions = this.options.filter((option) => option.textContent === value);
-    const id = +filterOptions[0].dataset.id;
+    const filterOption = this.options.find((option) => option.textContent === value);
+    const id = +filterOption.dataset.id;
 
     this.checkedOptionById(id);
   }
@@ -55,25 +57,27 @@ class Select {
     copyOptions[id].remove();
     this.wrapOptions.innerHTML = '';
     this.wrapOptions.append(...copyOptions);
-    this.setValueInput(this.options[id]?.textContent);
-
-    // const sel = document.querySelector('#selnam').value = '1';
-    // console.log(sel);
+    this.setValueInput(id);
   }
 
-  onClickInput() {
-    this.close();
+  onClickWrapInput() {
+    if (this.selectOpen) {
+      this.close();
+      return;
+    }
+
     this.open();
   }
 
   onKeyMySelect(e) {
     const key = e.key;
+    const target = e.target;
 
-    if (key === ' ' || key === 'Enter') {
+    if ((key === ' ' || key === 'Enter') && this.input.contains(target)) {
       this.open();
     }
 
-    if (key === 'Escape' || key === 'Tab') {
+    if ((key === 'Escape' || key === 'Tab') && this.mySelect.contains(target)) {
       this.close();
     }
   }
@@ -119,6 +123,7 @@ class Select {
     if (prevFocusOption) {
       e.preventDefault();
       prevFocusOption.focus();
+      return;
     }
 
     if (key === ' ' || key === 'Enter') {
@@ -141,28 +146,26 @@ class Select {
   }
 
   close(option) {
-    if (!this.wrapOptions.classList.contains(this.classHidden)) {
-      const removeHidden = () => {
-        this.wrapOptions.classList.add(this.classHidden);
-        this.wrapOptions.removeEventListener('mousemove', this.onMousemoveWrapOption);
-        this.wrapOptions.removeEventListener('keydown', this.onKeyWrapOption);
-        this.wrapOptions.removeEventListener('click', this.onClickWrapOption);
-        this.input.focus();
+    if (this.selectOpen) {
+      this.arrow.classList.remove(this.classOpenArrow);
+      this.wrapOptions.classList.add(this.classHidden);
+      this.wrapOptions.removeEventListener('mousemove', this.onMousemoveWrapOption);
+      this.wrapOptions.removeEventListener('keydown', this.onKeyWrapOption);
+      this.wrapOptions.removeEventListener('click', this.onClickWrapOption);
+      this.input.focus();
 
-        if (option !== undefined) {
-          this.checkedOptionById(+option.dataset.id);
-        }
-
-        clearTimeout(removeHidden);
-      };
+      if (option !== undefined && option !== null) {
+        this.checkedOptionById(+option.dataset.id);
+      }
 
       this.wrapOptions.classList.remove(this.classOpen);
-      setTimeout(removeHidden, this.timeAnimation);
+      this.selectOpen = false;
     }
   }
 
   open() {
-    if (this.wrapOptions.classList.contains(this.classHidden)) {
+    if (!this.selectOpen) {
+      this.arrow.classList.add(this.classOpenArrow);
       this.wrapOptions.classList.add(this.classOpen);
       this.wrapOptions.classList.remove(this.classHidden);
       this.startFocusOption();
@@ -170,11 +173,22 @@ class Select {
       this.wrapOptions.addEventListener('mousemove', this.onMousemoveWrapOption);
       this.wrapOptions.addEventListener('keydown', this.onKeyWrapOption);
       this.wrapOptions.addEventListener('click', this.onClickWrapOption);
+
+      this.selectOpen = true;
     }
   }
 
-  setValueInput(value) {
-    this.input.textContent = value;
+  setValueInput(idOption) {
+    const option = this.options[idOption];
+    this.input.textContent = option.textContent;
+    this.select.selectedIndex = idOption;
+  }
+
+  createArrow() {
+    const span = document.createElement('span');
+    span.classList.add('my-select__arrow');
+    span.setAttribute('tabindex', '-1');
+    return span;
   }
 
   createWrapOptions() {
@@ -185,22 +199,24 @@ class Select {
   }
 
   createOptions(options) {
-    const copyOptions = [...options];
-    return copyOptions.map((str, id) => {
+    return options.map((option, id) => {
       const li = document.createElement('li');
       li.dataset.id = id;
       li.dataset.type = 'option';
-      li.textContent = str;
+      li.textContent = option.textContent;
       li.setAttribute('tabindex', '0');
       li.classList.add('my-select__option');
       return li;
     });
   }
 
+  createWrapInput() {
+    return document.createElement('div');
+  }
+
   createInput(nameId) {
     const p = document.createElement('p');
     p.dataset.name = nameId;
-    p.id = nameId;
     p.setAttribute('tabindex', '0');
     p.classList.add('my-select__input');
     return p;
@@ -213,8 +229,7 @@ class Select {
   }
 }
 
-const CLASS_SELECT = '.select';
+const CLASS_SELECT = '.select-grooming';
 
-const select = new Select(CLASS_SELECT, options, 'select');
-select.checkedOptionByValue('мама');
-
+const select = new Select(CLASS_SELECT, '.select');
+select.input.classList.add('input');

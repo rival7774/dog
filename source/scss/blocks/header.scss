@@ -28,9 +28,15 @@
   }
 }
 
-.header__logo {
+.header__link-logo {
   margin-right: 7.12%;
 
+  @media (max-width: $tablet) {
+    margin-right: 10px;
+  }
+}
+
+.header__logo {
   @media (max-width: $tablet) {
     margin-right: 10px;
     width: 113px;

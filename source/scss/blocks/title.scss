@@ -1,0 +1,9 @@
+.title {
+  font-weight: 500;
+  letter-spacing: -2px;
+  @include font(30px, 48);
+  @include line(36px, 50);
+
+  @include font-media(30px, 48);
+  @include line-media(36px, 50);
+}

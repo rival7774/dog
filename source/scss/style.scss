@@ -13,8 +13,13 @@
 @import "utils";
 @import "base";
 
+@import "./blocks/fieldset";
+@import "./blocks/title";
+@import "./blocks/input";
 @import "./blocks/button";
 @import "./blocks/header";
 @import "./blocks/dark-curtain";
 @import "./blocks/main-section";
 @import "./blocks/my-select";
+@import "./blocks/popup";
+

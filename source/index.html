@@ -26,22 +26,59 @@ activeHome: "header__link--active",
         обеспечивают здоровье собаки на долгие годы.</p>
     </div>
   </section>
-
-  <div class="select">
-    <form action="https://echo.htmlacademy.ru" name="number" method="post">
-      <select class="asd" name="selnum" id="selnam" tabindex="-1">
-        <option value="1" class="asd__item">1</option>
-        <option value="2" class="asd__item">2</option>
-        <option value="3" class="asd__item">3</option>
-        <option value="4" class="asd__item">4</option>
-        <option value="5" class="asd__item">5</option>
-        <option value="6" class="asd__item">6</option>
-      </select>
-      <button type="submit">hjhvhb</button>
-    </form>
-
-  </div>
 </main>
+
+<section class="popup hide-completely popup-application-js" tabindex="0">
+  <form class="popup__form" name="application" action="">
+    <button class="popup__close btn-close-popup-js" type="button" aria-label="Закрыть окно с формой"></button>
+
+    <fieldset class="popup__fieldset fieldset">
+      <legend class="popup__legend title">Оставить заявку</legend>
+
+      <input class="popup__input-name input" type="text" name="application-name" id="application-name"
+             placeholder="Фамилия и Имя">
+      <label class="visually-hidden" for="application-name"></label>
+
+      <input required class="popup__input-name input" type="tel" name="application-tel" id="application-tel"
+             placeholder="Номер телефона">
+      <label class="visually-hidden" for="application-tel"></label>
+
+      <div class="select-grooming">
+        <label class="visually-hidden" for="grooming">Выберите груминг</label>
+        <select class="select" name="grooming" id="grooming">
+          <option value="1" class="asd__item">Гигиенический груминг</option>
+          <option value="2" class="asd__item">Профессиональный груминг</option>
+          <option value="3" class="asd__item">Эстетический груминг</option>
+        </select>
+      </div>
+
+      <button class="popup__submit button" type="submit">Отправить</button>
+    </fieldset>
+  </form>
+</section>
+
+<section class="popup hide-completely popup-call-js" tabindex="0">
+  <form class="popup__form" name="call" action="">
+    <button class="popup__close btn-close-popup-js" type="button" aria-label="Закрыть окно с формой"></button>
+
+    <fieldset class="popup__fieldset fieldset">
+      <legend class="popup__legend title">Обратный звонок</legend>
+
+      <input class="popup__input-name input" type="text" name="name" id="name"
+             placeholder="Фамилия и Имя">
+      <label class="visually-hidden" for="name"></label>
+
+      <input required class="popup__input-name input" type="tel" name="tel" id="tel"
+             placeholder="Номер телефона">
+      <label class="visually-hidden" for="tel"></label>
+
+      <input class="popup__input-name input" type="text" name="question" id="question" placeholder="Тип вопроса">
+      <label class="visually-hidden" for="question"></label>
+
+      <button class="popup__submit button" type="submit">Отправить</button>
+    </fieldset>
+  </form>
+</section>
 
 <script type="module" src="./js/index.js"></script>
 </body>
