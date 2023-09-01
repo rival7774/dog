@@ -1,0 +1,101 @@
+.procedures {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 154px;
+  row-gap: 65px;
+
+  padding-left: 60px;
+  padding-right: 60px;
+
+  @media (max-width: $tablet) {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    row-gap: 80px;
+  }
+}
+
+.procedures__title {
+  width: 53.81%;
+  letter-spacing: -4px;
+
+  @media (max-width: $media-procedures) {
+    width: 100%;
+  }
+}
+
+.procedures__wrap-description {
+  width: 36%;
+
+  @media (max-width: $media-procedures) {
+    width: 100%;
+  }
+}
+
+.procedures__number-description {
+  padding-bottom: 57px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid $border-light;
+
+  @media (max-width: $tablet) {
+    padding-bottom: 40px;
+  }
+}
+
+.procedures__description {
+  max-width: 454px;
+}
+
+.procedures__procedure-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 20px;
+
+  width: 100%;
+
+  @media (max-width: $media-procedures) {
+    justify-content: start;
+  }
+}
+
+.procedures__procedure-img {
+  border-radius: $border-radius-top-left;
+  max-width: 100%;
+  height: auto;
+}
+
+.procedures__procedure {
+  padding: 30px 147px 40px 40px;
+  background-color: $basic-white;
+  border-radius: $border-radius-top-right;
+  border: 1px solid $border-light;
+
+  @media (max-width: $media-procedures) {
+    padding: 30px 91px 40px 40px;
+  }
+}
+
+.procedures__procedure-title {
+  margin-bottom: 284px;
+
+  font-weight: 500;
+  letter-spacing: -3px;
+  @include font(28px, 20);
+  @include line(34px, 19);
+
+  @include font-media(28px, 20);
+  @include line-media(34px, 19);
+
+  @media (max-width: $media-procedures) {
+    margin-bottom: 80px;
+  }
+}
+
+.procedures__procedure-text {
+  max-width: 354px;
+
+  @media (max-width: $media-procedures) {
+    max-width: 263px;
+  }
+}

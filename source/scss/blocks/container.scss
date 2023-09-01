@@ -1,0 +1,9 @@
+.container {
+  padding: 120px 20px 0;
+  margin: 0 auto;
+  max-width: 1920px;
+
+  @media (max-width: $media-procedures) {
+    padding: 40px 20px 0;
+  }
+}

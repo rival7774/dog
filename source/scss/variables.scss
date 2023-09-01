@@ -18,6 +18,9 @@ $manrope: 'Manrope', Arial, sans-serif;
 */
 $media-menu: 1050px;
 $tablet: 768px;
+$media-procedures: 1665px;
+$media-types: 1570px;
+$media-types-tablet: 950px;
 
 /*
 * animation burger
@@ -36,8 +39,14 @@ $blue: #cfd2e7;
 $brown: #9a500f;
 
 /*
-*
+* Border-radius
  */
 $border-radius: 1000px;
 $border-radius-input: 40px;
+$border-radius-top-left: 64px 12px 12px 12px;
+$border-radius-top-right: 12px 64px 12px 12px;
+
+/*
+* Indents
+ */
 $padding: 20px;

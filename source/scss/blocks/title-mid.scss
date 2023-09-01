@@ -1,0 +1,9 @@
+.title-mid {
+  font-weight: 500;
+  letter-spacing: -2px;
+  @include font(20px, 10);
+  @include line(24px, 12);
+
+  @include font-media(20px, 10);
+  @include line-media(24px, 12);
+}
