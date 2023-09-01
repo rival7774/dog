@@ -7,3 +7,9 @@
     padding: 40px 20px 0;
   }
 }
+
+.container--padding-mobile {
+  @media (max-width: $tablet) {
+    padding: 40px 0 0;
+  }
+}
