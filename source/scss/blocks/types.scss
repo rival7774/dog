@@ -55,7 +55,7 @@
 
 .types__wrap-content {
   display: grid;
-  grid-template-columns: minmax(50px, 270px) minmax(300px, 543px) auto;
+  grid-template-columns: minmax(50px, 270px) minmax(300px, auto) minmax(100px, 250px);
   column-gap: 20px;
   justify-items: flex-start;
   align-items: flex-start;
@@ -101,6 +101,7 @@
 .types__text {
   grid-column: 2/3;
   grid-row: 2/3;
+  max-width: 543px;
 
   @media (max-width: $tablet) {
     grid-column: 1/-1;
@@ -124,6 +125,13 @@
   position: absolute;
   top: 0;
   left: 40px;
+
+  transition: opacity $animation;
+  opacity: 0;
+
+  .types__item--visible > picture > & {
+    opacity: 1;
+  }
 
   @media (max-width: $media-types) {
     display: none;

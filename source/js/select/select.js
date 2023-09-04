@@ -5,7 +5,7 @@ class Select {
     this.onClickWrapInput = this.onClickWrapInput.bind(this);
     this.onKeyMySelect = this.onKeyMySelect.bind(this);
     this.onFocusoutMySelect = this.onFocusoutMySelect.bind(this);
-    this.onMousemoveWrapOption = this.onMousemoveWrapOption.bind(this);
+    this.onMouseoverWrapOption = this.onMouseoverWrapOption.bind(this);
     this.onKeyWrapOption = this.onKeyWrapOption.bind(this);
     this.onClickWrapOption = this.onClickWrapOption.bind(this);
 
@@ -87,10 +87,10 @@ class Select {
     this.close();
   }
 
-  onMousemoveWrapOption(e) {
+  onMouseoverWrapOption(e) {
     const target = e.target;
     const dataTypeOption = target.dataset.type;
-
+    console.log(21);
     if (dataTypeOption === 'option') {
       target.focus();
       this.dedicatedOption = [...this.wrapOptions.children].findIndex((elem) => elem.textContent === target.textContent);
@@ -149,7 +149,7 @@ class Select {
     if (this.selectOpen) {
       this.arrow.classList.remove(this.classOpenArrow);
       this.wrapOptions.classList.add(this.classHidden);
-      this.wrapOptions.removeEventListener('mousemove', this.onMousemoveWrapOption);
+      this.wrapOptions.removeEventListener('mouseover', this.onMouseoverWrapOption);
       this.wrapOptions.removeEventListener('keydown', this.onKeyWrapOption);
       this.wrapOptions.removeEventListener('click', this.onClickWrapOption);
       this.input.focus();
@@ -170,7 +170,7 @@ class Select {
       this.wrapOptions.classList.remove(this.classHidden);
       this.startFocusOption();
 
-      this.wrapOptions.addEventListener('mousemove', this.onMousemoveWrapOption);
+      this.wrapOptions.addEventListener('mousemove', this.onMouseoverWrapOption);
       this.wrapOptions.addEventListener('keydown', this.onKeyWrapOption);
       this.wrapOptions.addEventListener('click', this.onClickWrapOption);
 
