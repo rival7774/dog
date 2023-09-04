@@ -10,7 +10,7 @@ function onMouseoverList(e) {
   const target = e.target;
   const prevTarget = e.relatedTarget;
 
-  if (target.closest(`.${SELECTOR_ITEM}`)) {
+  if (target.closest(`.${SELECTOR_ITEM}`) && target.tagName !== 'IMG') {
     const item = target.closest(`.${SELECTOR_ITEM}`);
 
     item.classList.add(SELECTOR_ITEM_VISIBLE);

@@ -1,5 +1,3 @@
-const options = ['мама', 'папа', 'сестра', 'жена', 'osuefosifjm', 'sedgsjirhgiuagh airghj oiajrg ajoi gja', 'shsfasf', 'hddjsdgs', 'gdhsg', 'asdasgaf', 'asdadas', 'asdasd',];
-
 class Select {
   constructor(selector, selectorSelect) {
     this.onClickWrapInput = this.onClickWrapInput.bind(this);
@@ -90,7 +88,7 @@ class Select {
   onMouseoverWrapOption(e) {
     const target = e.target;
     const dataTypeOption = target.dataset.type;
-    console.log(21);
+
     if (dataTypeOption === 'option') {
       target.focus();
       this.dedicatedOption = [...this.wrapOptions.children].findIndex((elem) => elem.textContent === target.textContent);
@@ -170,7 +168,7 @@ class Select {
       this.wrapOptions.classList.remove(this.classHidden);
       this.startFocusOption();
 
-      this.wrapOptions.addEventListener('mousemove', this.onMouseoverWrapOption);
+      this.wrapOptions.addEventListener('mouseover', this.onMouseoverWrapOption);
       this.wrapOptions.addEventListener('keydown', this.onKeyWrapOption);
       this.wrapOptions.addEventListener('click', this.onClickWrapOption);
 
