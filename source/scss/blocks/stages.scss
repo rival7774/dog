@@ -1,9 +1,13 @@
 .stages {
-  padding: 163px 60px 120px;
+  padding: 8.5% 60px 120px;
   background: url("../../img/stages-grooming.svg");
   background-repeat: no-repeat;
   background-size: 93%;
   background-position-x: 54%;
+
+  @media (max-width: $tablet) {
+    padding: 6.5% 20px 120px;
+  }
 }
 
 .stages__list {
@@ -12,8 +16,10 @@
   grid-template-rows: minmax(260px, min-content) minmax(360px, 1fr);
   gap: 20px;
 
-  @media (max-width: $media-menu) {
-    display: block;
+  @media (max-width: $media-types) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -25,14 +31,32 @@
   flex-direction: column;
   justify-content: space-between;
 
+  @media (max-width: $media-types) {
+    transform: translateY(40%);
+    transition: transform $animation;
+
+    &.show-element {
+      transform: translateY(0);
+      top: 0;
+    }
+  }
+
   &:first-of-type {
     grid-row: 1/-1;
+
+    flex-direction: column-reverse;
+    padding-right: 130px;
+
     background-image: url("../../img/bac-icon.svg"), url("../../img/bac-icon-small.svg");
     background-color: $brown;
     background-repeat: no-repeat;
     background-position: right -33% top 98px, bottom 40px right 30px;
     background-size: 72.5%, auto;
     border-radius: $border-radius-bottom-right;
+
+    @media (max-width: $media-types) {
+      flex-direction: column;
+    }
   }
 
   &:nth-of-type(2) {
@@ -42,7 +66,7 @@
   &:nth-of-type(3) {
     border-radius: $border-radius-bottom-left;
 
-    @media (max-width: $media-menu) {
+    @media (max-width: $media-types) {
       border-radius: $border-radius-bottom-right;
     }
   }
@@ -50,7 +74,7 @@
   &:nth-of-type(4) {
     border-radius: $border-radius-top-right;
 
-    @media (max-width: $media-menu) {
+    @media (max-width: $media-types) {
       border-radius: $border-radius-bottom-right;
     }
   }
@@ -58,22 +82,30 @@
   &:nth-of-type(5) {
     border-radius: $border-radius-top-left;
 
-    @media (max-width: $media-menu) {
+    @media (max-width: $media-types) {
       border-radius: $border-radius-bottom-right;
     }
-  }
-
-  @media (max-width: $media-menu) {
-    min-height: 335px;
   }
 }
 
 .stages__subtitle {
-  .stages__item:not(:first-of-type) > & {
+  .stages__item:first-of-type & {
+    color: $blue;
+  }
+
+  .stages__item:not(:first-of-type) & {
     margin-bottom: 60px;
+    color: $brown;
+  }
+
+  @media (max-width: $media-types) {
+    margin-bottom: 80px;
   }
 }
 
 .stages__text {
 
+  .stages__item:first-of-type & {
+    color: $basic-white;
+  }
 }

@@ -4,24 +4,24 @@ const SELECTOR_ITEM_VISIBLE = 'types__item--visible';
 
 const list = document.querySelector(`.${SELECTOR_LIST}`);
 
-list.addEventListener('mouseover', onMouseoverList, true);
+list.addEventListener('mouseover', onMouseoverList(), true);
 
-function onMouseoverList(e) {
-  const target = e.target;
-  const prevTarget = e.relatedTarget;
+function onMouseoverList() {
+  let prevItem;
 
-  if (target.closest(`.${SELECTOR_ITEM}`) && target.tagName !== 'IMG') {
-    const item = target.closest(`.${SELECTOR_ITEM}`);
+  return function (e) {
+    const target = e.target;
 
-    item.classList.add(SELECTOR_ITEM_VISIBLE);
+    if (target.closest(`.${SELECTOR_ITEM}`) && target.tagName !== 'IMG') {
+      const item = target.closest(`.${SELECTOR_ITEM}`);
 
-    if (prevTarget &&
-      prevTarget.closest(`.${SELECTOR_ITEM}`) &&
-      prevTarget.closest(`.${SELECTOR_ITEM}`) !== item) {
+      item.classList.add(SELECTOR_ITEM_VISIBLE);
 
-      prevTarget.closest(`.${SELECTOR_ITEM}`)
-                .classList
-                .remove(SELECTOR_ITEM_VISIBLE);
+      if (prevItem && prevItem !== item) {
+        prevItem.classList.remove(SELECTOR_ITEM_VISIBLE);
+      }
+
+      prevItem = item;
     }
-  }
+  };
 }

@@ -1,15 +1,18 @@
 .container {
-  padding: 0 20px;
+  padding: 0 60px;
   margin: 120px auto 0;
   max-width: 1920px;
 
-  @media (max-width: $media-procedures) {
-    padding: 40px 20px 0;
+  @media (max-width: $tablet) {
+    padding: 0 20px;
+    margin: 40px auto 0;
   }
 }
 
-.container--padding-mobile {
+.container--small {
+  padding: 0 20px;
+
   @media (max-width: $tablet) {
-    padding: 40px 0 0;
+    padding: 0;
   }
 }
