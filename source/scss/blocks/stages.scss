@@ -1,0 +1,79 @@
+.stages {
+  padding: 163px 60px 120px;
+  background: url("../../img/stages-grooming.svg");
+  background-repeat: no-repeat;
+  background-size: 93%;
+  background-position-x: 54%;
+}
+
+.stages__list {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: minmax(260px, min-content) minmax(360px, 1fr);
+  gap: 20px;
+
+  @media (max-width: $media-menu) {
+    display: block;
+  }
+}
+
+.stages__item {
+  background-color: $basic-white;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:first-of-type {
+    grid-row: 1/-1;
+    background-image: url("../../img/bac-icon.svg"), url("../../img/bac-icon-small.svg");
+    background-color: $brown;
+    background-repeat: no-repeat;
+    background-position: right -33% top 98px, bottom 40px right 30px;
+    background-size: 72.5%, auto;
+    border-radius: $border-radius-bottom-right;
+  }
+
+  &:nth-of-type(2) {
+    border-radius: $border-radius-bottom-right;
+  }
+
+  &:nth-of-type(3) {
+    border-radius: $border-radius-bottom-left;
+
+    @media (max-width: $media-menu) {
+      border-radius: $border-radius-bottom-right;
+    }
+  }
+
+  &:nth-of-type(4) {
+    border-radius: $border-radius-top-right;
+
+    @media (max-width: $media-menu) {
+      border-radius: $border-radius-bottom-right;
+    }
+  }
+
+  &:nth-of-type(5) {
+    border-radius: $border-radius-top-left;
+
+    @media (max-width: $media-menu) {
+      border-radius: $border-radius-bottom-right;
+    }
+  }
+
+  @media (max-width: $media-menu) {
+    min-height: 335px;
+  }
+}
+
+.stages__subtitle {
+  .stages__item:not(:first-of-type) > & {
+    margin-bottom: 60px;
+  }
+}
+
+.stages__text {
+
+}

@@ -162,19 +162,19 @@
     background-color: $basic-white;
 
     &:first-of-type {
-      border-radius: 32px 6px 6px 6px;
+      border-radius: $border-radius-top-left-small;
     }
 
     &:last-of-type {
-      border-radius: 6px 6px 32px 6px;
+      border-radius: $border-radius-bottom-right-small;
     }
 
     &:nth-child(2) {
-      border-radius: 6px 32px 6px 6px;
+      border-radius: $border-radius-top-right-small;
     }
 
     &:nth-last-child(2) {
-      border-radius: 6px 6px 6px 32px;
+      border-radius: $border-radius-bottom-left-small;
     }
   }
 }
