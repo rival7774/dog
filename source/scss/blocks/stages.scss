@@ -32,6 +32,8 @@
   justify-content: space-between;
 
   @media (max-width: $media-types) {
+    flex-direction: column-reverse;
+
     transform: translateY(40%);
     transition: transform $animation;
 
@@ -53,10 +55,6 @@
     background-position: right -33% top 98px, bottom 40px right 30px;
     background-size: 72.5%, auto;
     border-radius: $border-radius-bottom-right;
-
-    @media (max-width: $media-types) {
-      flex-direction: column;
-    }
   }
 
   &:nth-of-type(2) {
@@ -96,15 +94,18 @@
   .stages__item:not(:first-of-type) & {
     margin-bottom: 60px;
     color: $brown;
+
+    @media (max-width: $media-types) {
+      margin-bottom: auto;
+    }
   }
 
   @media (max-width: $media-types) {
-    margin-bottom: 80px;
+    margin-top: 80px;
   }
 }
 
 .stages__text {
-
   .stages__item:first-of-type & {
     color: $basic-white;
   }

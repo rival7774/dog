@@ -18,12 +18,14 @@ activeHome: "header__link--active",
 
 <main>
   <section class="main-section">
-    <div class="main-section__wrap-content">
-      <h2 class="main-section__title">Здоровой собаке нужен здоровый уход</h2>
-      <p class="main-section__text">Груминг собак – очень важное мероприятие для любой собаки, независимо от породы,
-        размера и возраста. </p>
-      <p class="main-section__text">Регулярные процедуры по уходу за шерстью, когтями, зубами, глазами и ушами
-        обеспечивают здоровье собаки на долгие годы.</p>
+    <div class="main-section__inner-wrap">
+      <div class="main-section__wrap-content">
+        <h2 class="main-section__title">Здоровой собаке нужен здоровый уход</h2>
+        <p class="main-section__text">Груминг собак – очень важное мероприятие для любой собаки, независимо от породы,
+          размера и возраста. </p>
+        <p class="main-section__text">Регулярные процедуры по уходу за шерстью, когтями, зубами, глазами и ушами
+          обеспечивают здоровье собаки на долгие годы.</p>
+      </div>
     </div>
   </section>
 
@@ -71,8 +73,7 @@ activeHome: "header__link--active",
           </div>
 
           <picture>
-            <source type="image/webp" media="(min-width: 1280px)"
-                    srcset="./img/dog-hygienic.webp, ./img/dog-hygienic@x2.webp 2x">
+            <source type="image/webp" srcset="./img/dog-hygienic.webp, ./img/dog-hygienic@x2.webp 2x">
             <img class="types__img types__img--js" width="474" height="360" src="./img/dog-hygienic.jpg"
                  srcset="./img/dog-hygienic@x2.jpg 2x" alt="бежево рыжий пес с красным ошейником куда-то смотрит">
           </picture>
@@ -90,8 +91,7 @@ activeHome: "header__link--active",
           </div>
 
           <picture>
-            <source type="image/webp" media="(min-width: 1280px)"
-                    srcset="./img/dog-professional.webp, ./img/dog-professional@x2.webp 2x">
+            <source type="image/webp" srcset="./img/dog-professional.webp, ./img/dog-professional@x2.webp 2x">
             <img class="types__img types__img--js" width="474" height="360" src="./img/dog-professional.jpg"
                  srcset="./img/dog-professional@x2.jpg 2x" alt="рыжий пёс вытащив язык и свесив уши чего-то ждёт">
           </picture>
@@ -110,8 +110,7 @@ activeHome: "header__link--active",
           </div>
 
           <picture>
-            <source type="image/webp" media="(min-width: 1280px)"
-                    srcset="./img/dog-aesthetic.webp, ./img/dog-aesthetic@x2.webp 2x">
+            <source type="image/webp" srcset="./img/dog-aesthetic.webp, ./img/dog-aesthetic@x2.webp 2x">
             <img class="types__img types__img--js" width="474" height="360" src="./img/dog-aesthetic.jpg"
                  srcset="./img/dog-aesthetic@x2.jpg 2x"
                  alt="<бежевая собака на черном фоне повернула голову в профиль>">
@@ -153,7 +152,17 @@ activeHome: "header__link--active",
       </li>
     </ul>
   </section>
+
+  <div class="container">
+    <section class="discount">
+      <h2 class="discount__title title">Скажи промокод “Groomer” чтобы получить скидку 20% на первый заказ</h2>
+
+      <a class="discount__link button button--border" href="">Заказать процедуру</a>
+    </section>
+  </div>
 </main>
+
+@@include("./blocks/footer.html")
 
 <section class="popup hide-completely popup-application-js" tabindex="0">
   <form class="popup__form" name="application" action="">

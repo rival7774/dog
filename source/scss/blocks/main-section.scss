@@ -1,16 +1,8 @@
 .main-section {
-  min-height: 1000px;
-  padding: 20px;
-
   background: image-set("../../img/dog-bg.jpg" 1x, "../../img/dog-bg@x2.jpg" 2x), $brown;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-end;
 
   @media (max-width: 1780px) {
     background-size: 1920px 1080px;
@@ -21,12 +13,26 @@
   }
 }
 
+.main-section__inner-wrap {
+  padding: 100px 20px 20px;
+  margin: 0 auto;
+
+  min-height: 1000px;
+  max-width: 1920px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
 .main-section__wrap-content {
   color: $basic-white;
-  padding: 40px 86px 40px 40px;
-  border-radius: 12px 64px 12px 0px;
+  border-radius: $border-radius-top-right;
   backdrop-filter: blur(10px);
   max-width: 1134px;
+
+  padding: 40px 86px 40px 40px;
 
   display: grid;
   grid-template-columns: 1fr 1fr;

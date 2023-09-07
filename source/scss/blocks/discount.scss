@@ -1,0 +1,40 @@
+.discount {
+  padding: 40px 40px 40px 630px;
+  margin-bottom: 240px;
+  border-radius: $border-radius-top-right;
+
+  background-color: $blue;
+  background-image: image-set("../../img/bac-discount-desktop.png" 1x, "../../img/bac-discount-desktop@x2.png" 2x);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media (max-width: $media-types) {
+    padding: 30px 30px 283px 30px;
+    margin-bottom: 160px;
+
+    background-image: image-set("../../img/bac-discount-mobile.png" 1x, "../../img/bac-discount-mobile@x2.png" 2x);
+    background-position: bottom center;
+    background-size: auto;
+  }
+}
+
+.discount__title {
+  color: $brown;
+  margin-bottom: 198px;
+
+  @media (max-width: $media-types) {
+    margin-bottom: 40px;
+  }
+}
+
+.discount__link {
+  color: $brown;
+  border-color: $brown;
+  width: 100%;
+  background-color: inherit;
+
+  @media (max-width: $media-types) {
+    background-color: $brown;
+    color: $basic-white;
+  }
+}
