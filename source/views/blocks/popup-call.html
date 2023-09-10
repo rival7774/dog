@@ -1,0 +1,24 @@
+<section class="popup hide-completely popup-call-js" tabindex="0">
+  <h2 class="visually-hidden">Форма для обратного звонка</h2>
+
+  <form class="popup__form" name="call" action="#">
+    <button class="popup__close btn-close-popup-js" type="button" aria-label="Закрыть окно с формой"></button>
+
+    <fieldset class="popup__fieldset fieldset">
+      <legend class="popup__legend title">Обратный звонок</legend>
+
+      <input class="popup__input-name input" type="text" name="name" id="name"
+             placeholder="Фамилия и Имя">
+      <label class="visually-hidden" for="name"></label>
+
+      <input required class="popup__input-name input" type="tel" name="tel" id="tel"
+             placeholder="Номер телефона">
+      <label class="visually-hidden" for="tel"></label>
+
+      <input class="popup__input-name input" type="text" name="question" id="question" placeholder="Тип вопроса">
+      <label class="visually-hidden" for="question"></label>
+
+      <button class="popup__submit button" type="submit">Отправить</button>
+    </fieldset>
+  </form>
+</section>

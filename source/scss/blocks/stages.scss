@@ -1,6 +1,6 @@
 .stages {
   padding: 8.5% 60px 120px;
-  background: url("../../img/stages-grooming.svg");
+  background: url("../img/stages-grooming.svg");
   background-repeat: no-repeat;
   background-size: 93%;
   background-position-x: 54%;
@@ -49,7 +49,7 @@
     flex-direction: column-reverse;
     padding-right: 130px;
 
-    background-image: url("../../img/bac-icon.svg"), url("../../img/bac-icon-small.svg");
+    background-image: url("../img/bac-icon.svg"), url("../img/bac-icon-small.svg");
     background-color: $brown;
     background-repeat: no-repeat;
     background-position: right -33% top 98px, bottom 40px right 30px;

@@ -5,7 +5,7 @@
 
   display: flex;
 
-  background-image: url("../../img/bac-footer.svg");
+  background-image: url("../img/bac-footer.svg");
   background-repeat: no-repeat;
   background-position-y: 28px;
   background-position-x: center;
@@ -14,7 +14,7 @@
   @media (max-width: $media-types) {
     justify-content: flex-end;
 
-    background-image: url("../../img/bac-footer-mobile.svg");
+    background-image: url("../img/bac-footer-mobile.svg");
     background-position-y: center;
     background-position-x: 30px;
     background-size: auto 90%;
@@ -26,7 +26,7 @@
   padding-bottom: 60px;
 
   color: $basic-white;
-  background-image: url("../../img/studio-icon.svg");
+  background-image: url("../img/studio-icon.svg");
   background-repeat: no-repeat;
   background-position: left 60px top;
 
@@ -83,8 +83,4 @@
   @media (max-width: $media-types) {
     margin-right: 0;
   }
-}
-
-.footer__link {
-
 }

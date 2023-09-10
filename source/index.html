@@ -2,18 +2,29 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google" content="notranslate">
   <meta name="format-detection" content="telephone=no">
   <title>Document</title>
 
-
   <link href="css/style.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="index-js">
 @@include("./blocks/header.html", {
+hrefLogo: "",
+
 activeHome: "header__link--active",
+hrefHome: "",
+
+activeAbout: "",
+hrefAbout: "href='../../about.html'",
+
+activePrise: "",
+hrefPrise: "href='../../prise.html'",
+
+activeReviews: "",
+hrefReviews: "href='../../reviews.html'",
 })
 
 <main>
@@ -164,61 +175,8 @@ activeHome: "header__link--active",
 
 @@include("./blocks/footer.html")
 
-<section class="popup hide-completely popup-application-js" tabindex="0">
-  <h2 class="visually-hidden">Форма для отправки заявки</h2>
-
-  <form class="popup__form" name="application" action="#">
-    <button class="popup__close btn-close-popup-js" type="button" aria-label="Закрыть окно с формой"></button>
-
-    <fieldset class="popup__fieldset fieldset">
-      <legend class="popup__legend title">Оставить заявку</legend>
-
-      <input class="popup__input-name input" type="text" name="application-name" id="application-name"
-             placeholder="Фамилия и Имя">
-      <label class="visually-hidden" for="application-name"></label>
-
-      <input required class="popup__input-name input" type="tel" name="application-tel" id="application-tel"
-             placeholder="Номер телефона">
-      <label class="visually-hidden" for="application-tel"></label>
-
-      <div class="select-grooming">
-        <label class="visually-hidden" for="grooming">Выберите груминг</label>
-        <select class="select" name="grooming" id="grooming">
-          <option value="1" class="asd__item">Гигиенический груминг</option>
-          <option value="2" class="asd__item">Профессиональный груминг</option>
-          <option value="3" class="asd__item">Эстетический груминг</option>
-        </select>
-      </div>
-
-      <button class="popup__submit button" type="submit">Отправить</button>
-    </fieldset>
-  </form>
-</section>
-
-<section class="popup hide-completely popup-call-js" tabindex="0">
-  <h2 class="visually-hidden">Форма для обратного звонка</h2>
-
-  <form class="popup__form" name="call" action="#">
-    <button class="popup__close btn-close-popup-js" type="button" aria-label="Закрыть окно с формой"></button>
-
-    <fieldset class="popup__fieldset fieldset">
-      <legend class="popup__legend title">Обратный звонок</legend>
-
-      <input class="popup__input-name input" type="text" name="name" id="name"
-             placeholder="Фамилия и Имя">
-      <label class="visually-hidden" for="name"></label>
-
-      <input required class="popup__input-name input" type="tel" name="tel" id="tel"
-             placeholder="Номер телефона">
-      <label class="visually-hidden" for="tel"></label>
-
-      <input class="popup__input-name input" type="text" name="question" id="question" placeholder="Тип вопроса">
-      <label class="visually-hidden" for="question"></label>
-
-      <button class="popup__submit button" type="submit">Отправить</button>
-    </fieldset>
-  </form>
-</section>
+@@include("./blocks/popup-application.html")
+@@include("./blocks/popup-call.html")
 
 <script type="module" src="./js/index.js"></script>
 </body>

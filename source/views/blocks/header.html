@@ -1,5 +1,5 @@
 <header class="header header--js">
-  <a class="header__link-logo" href="#">
+  <a class="header__link-logo" @@hrefLogo>
     <img class="header__logo" width="130" height="40" src="./img/logo-desktop.png"
          srcset="./img/logo-desktop@x2.png 2x"
          alt="Логотип компании Groomers">
@@ -12,10 +12,10 @@
   <div class="header__wrap-menu">
     <nav class="header__nav">
       <ul class="header__list">
-        <li class="header__item"><a href="" class="header__link @@activeHome">Главная</a></li>
-        <li class="header__item"><a href="" class="header__link @@activeAbout">О нас</a></li>
-        <li class="header__item"><a href="" class="header__link @@activePrise">Прайс-лист</a></li>
-        <li class="header__item"><a href="" class="header__link @@activeReviews">Отзывы</a></li>
+        <li class="header__item"><a @@hrefHome class="header__link @@activeHome">Главная</a></li>
+        <li class="header__item"><a @@hrefAbout class="header__link @@activeAbout">О нас</a></li>
+        <li class="header__item"><a @@hrefPrise class="header__link @@activePrise">Прайс-лист</a></li>
+        <li class="header__item"><a @@hrefReviews class="header__link @@activeReviews">Отзывы</a></li>
       </ul>
     </nav>
 

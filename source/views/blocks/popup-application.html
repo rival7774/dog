@@ -1,0 +1,30 @@
+<section class="popup hide-completely popup-application-js" tabindex="0">
+  <h2 class="visually-hidden">Форма для отправки заявки</h2>
+
+  <form class="popup__form" name="application" action="#">
+    <button class="popup__close btn-close-popup-js" type="button" aria-label="Закрыть окно с формой"></button>
+
+    <fieldset class="popup__fieldset fieldset">
+      <legend class="popup__legend title">Оставить заявку</legend>
+
+      <input class="popup__input-name input" type="text" name="application-name" id="application-name"
+             placeholder="Фамилия и Имя">
+      <label class="visually-hidden" for="application-name"></label>
+
+      <input required class="popup__input-name input" type="tel" name="application-tel" id="application-tel"
+             placeholder="Номер телефона">
+      <label class="visually-hidden" for="application-tel"></label>
+
+      <div class="select-grooming">
+        <label class="visually-hidden" for="grooming">Выберите груминг</label>
+        <select class="select" name="grooming" id="grooming">
+          <option value="1" class="asd__item">Гигиенический груминг</option>
+          <option value="2" class="asd__item">Профессиональный груминг</option>
+          <option value="3" class="asd__item">Эстетический груминг</option>
+        </select>
+      </div>
+
+      <button class="popup__submit button" type="submit">Отправить</button>
+    </fieldset>
+  </form>
+</section>

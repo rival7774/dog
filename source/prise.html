@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <meta name="format-detection" content="telephone=no">
+  <title>Document</title>
+
+  <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body class="prise-js">
+@@include("./blocks/header.html", {
+hrefLogo: "href='../../index.html'",
+
+activeHome: "",
+hrefHome: "href='../../index.html'",
+
+activeAbout: "",
+hrefAbout: "href='../../about.html'",
+
+activePrise: "header__link--active",
+hrefPrise: "",
+
+activeReviews: "",
+hrefReviews: "href='../../reviews.html'",
+})
+
+<main>
+  <div class="container">
+    <h1 class="">Мы понимаем, что не многие могут позволить себе дорогой груминг. Именно поэтому наша ценовая политика
+      довольно гибка, и <span class="dedicated dedicated--brown">каждый</span> сможет позволить себе наши услуги.</h1>
+  </div>
+
+  <div class="container container--small">
+    <section class="types">
+      <ul class="types__list types__list--js">
+        <li class="types__item types__item--visible types__item--js">
+          <div class="types__wrap-content">
+            <span class="types__counter number-color title-mid"></span>
+
+            <h3 class="types__name-title title-mid">Гигиенический</h3>
+            <p class="types__text">Домашние процедуры по уходу, направленные на поддержание гигиены животного.</p>
+
+            <a class="types__link button" href="">Подробнее</a>
+          </div>
+
+          <picture>
+            <source type="image/webp" srcset="./img/dog-hygienic.webp, ./img/dog-hygienic@x2.webp 2x">
+            <img class="types__img types__img--js" width="474" height="360" src="./img/dog-hygienic.jpg"
+                 srcset="./img/dog-hygienic@x2.jpg 2x" alt="бежево рыжий пес с красным ошейником куда-то смотрит">
+          </picture>
+        </li>
+
+        <li class="types__item types__item--js">
+          <div class="types__wrap-content">
+            <span class="types__counter number-color title-mid"></span>
+
+            <h3 class="types__name-title title-mid">Профессиональный</h3>
+            <p class="types__text">Выполняется в специализированных салонах. Включает процедуры по уходу и модельные
+              стрижки.</p>
+
+            <a class="types__link button" href="">Подробнее</a>
+          </div>
+        </li>
+
+        <li class="types__item types__item--js">
+          <div class="types__wrap-content">
+            <span class="types__counter number-color title-mid"></span>
+
+            <h3 class="types__name-title title-mid">Эстетический</h3>
+            <p class="types__text">Фигурная стрижка шерсти, отбеливание зубов, татуаж и другие процедуры, выполняемые
+              с
+              целью подготовки животного к выставкам и фотосессиям.</p>
+
+            <a class="types__link button" href="">Подробнее</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="container">
+    <section class="discount">
+      <h2 class="discount__title title">Скажи промокод “Groomer” чтобы получить скидку 20% на первый заказ</h2>
+
+      <a class="discount__link button button--border" href="">Заказать процедуру</a>
+    </section>
+  </div>
+</main>
+
+@@include("./blocks/footer.html")
+
+@@include("./blocks/popup-application.html")
+@@include("./blocks/popup-call.html")
+
+<script type="module" src="./js/index.js"></script>
+</body>
+</html>

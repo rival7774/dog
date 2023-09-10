@@ -4,7 +4,7 @@
   border-radius: $border-radius-top-right;
 
   background-color: $blue;
-  background-image: image-set("../../img/bac-discount-desktop.png" 1x, "../../img/bac-discount-desktop@x2.png" 2x);
+  background-image: image-set("../img/bac-discount-desktop.png" 1x, "../img/bac-discount-desktop@x2.png" 2x);
   background-repeat: no-repeat;
   background-size: contain;
 
@@ -12,7 +12,7 @@
     padding: 30px 30px 283px 30px;
     margin-bottom: 160px;
 
-    background-image: image-set("../../img/bac-discount-mobile.png" 1x, "../../img/bac-discount-mobile@x2.png" 2x);
+    background-image: image-set("../img/bac-discount-mobile.png" 1x, "../img/bac-discount-mobile@x2.png" 2x);
     background-position: bottom center;
     background-size: auto;
   }
