@@ -1,0 +1,11 @@
+.title-prise {
+  letter-spacing: -2px;
+  @include font(20px, 28);
+  @include line(24px, 29);
+
+  @include font-media(20px, 28);
+  @include line-media(24px, 29);
+
+  max-width: 1106px;
+  margin-top: 204px;
+}

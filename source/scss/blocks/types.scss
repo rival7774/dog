@@ -9,6 +9,11 @@
   }
 }
 
+.types--prise {
+  background-color: inherit;
+  padding-top: 0;
+}
+
 .types__title {
   font-weight: inherit;
   font-size: inherit;
@@ -79,6 +84,11 @@
   @media (max-width: $tablet) {
     grid-template-columns: minmax(30px, 66px) auto;
   }
+
+  .types--prise & {
+    opacity: 1;
+    border-bottom: 1px solid $border-light;
+  }
 }
 
 .types__counter {
@@ -96,6 +106,21 @@
   @media (max-width: $tablet) {
     margin-bottom: 40px;
   }
+
+  .types--prise & {
+    margin-bottom: 13px;
+  }
+}
+
+.types__price {
+  color: $brown;
+  font-weight: 500;
+  letter-spacing: -2px;
+  @include font(30px, 18);
+  @include line(36px, 17);
+
+  @include font-media(30px, 18);
+  @include line-media(36px, 17);
 }
 
 .types__text {
@@ -109,7 +134,41 @@
 
     margin-bottom: 40px;
   }
+
+  .types--prise & {
+    margin-top: 27px;
+  }
 }
+
+.types__mark {
+  font-size: 16px;
+  line-height: 19px;
+  color: $border-mid;
+
+  margin-top: 20px;
+
+  grid-column: 3/-1;
+}
+
+.types__list-procedures {
+  list-style: disc;
+  margin-top: 80px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 63px;
+
+  grid-column: 2/3;
+}
+
+.types__item-procedures {
+  margin-left: 22px;
+
+  font-size: 16px;
+  line-height: 19px;
+  color: $border-mid;
+}
+
 
 .types__link {
   margin-left: auto;
@@ -118,6 +177,12 @@
     margin-left: 0;
     width: 100%;
     grid-column: 1/-1;
+  }
+
+  .types--prise & {
+    grid-column: 3/-1;
+    align-self: flex-end;
+    margin-top: 20px;
   }
 }
 
@@ -128,6 +193,8 @@
 
   transition: opacity $animation;
   opacity: 0;
+
+  border-radius: $border-radius-top-right;
 
   .types__item--visible > picture > & {
     opacity: 1;
